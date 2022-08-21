@@ -1,16 +1,28 @@
 {
   "files": {
-    "main.css": "/adventure-time/static/css/main.073c9b0a.css",
-    "main.js": "/adventure-time/static/js/main.e3f476d1.js",
-    "static/js/787.dd7c9d13.chunk.js": "/adventure-time/static/js/787.dd7c9d13.chunk.js",
-    "static/media/logo.svg": "/adventure-time/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "main.css": "/adventure-time/static/css/main.706b0999.css",
+    "main.js": "/adventure-time/static/js/main.0f375df4.js",
+    "static/media/spaceland.png": "/adventure-time/static/media/spaceland.20dffb439d39ab020ef0.png",
+    "static/media/space.png": "/adventure-time/static/media/space.b0b53f754b53f9a25b82.png",
+    "static/media/lemonkingdom.png": "/adventure-time/static/media/lemonkingdom.5fd4b59f636472e82529.png",
+    "static/media/treehouse.png": "/adventure-time/static/media/treehouse.fefc8407124cc64882ce.png",
+    "static/media/bubblegum.png": "/adventure-time/static/media/bubblegum.ec9a19082125ad434cfc.png",
+    "static/media/hero.png": "/adventure-time/static/media/hero.0fcd42e43929d10e4315.png",
+    "static/media/jake.png": "/adventure-time/static/media/jake.b91719ac6e2c2c8d9cb5.png",
+    "static/media/flame-princess.png": "/adventure-time/static/media/flame-princess.82bac4fafe3af5a81026.png",
+    "static/media/logo.png": "/adventure-time/static/media/logo.7cdf565eafdde7fffb44.png",
+    "static/media/fin-jake.png": "/adventure-time/static/media/fin-jake.935251fd0af8681631f2.png",
+    "static/media/marceline.png": "/adventure-time/static/media/marceline.f78f359f38437ba8bed7.png",
+    "static/media/ice-king.png": "/adventure-time/static/media/ice-king.5bc8d67ee3ec37851cf6.png",
+    "static/media/finn.png": "/adventure-time/static/media/finn.3eeb4af84b21b7c1c8a9.png",
+    "static/media/lemongrab.png": "/adventure-time/static/media/lemongrab.46194bc9af67c7d71302.png",
+    "static/media/beemo.png": "/adventure-time/static/media/beemo.dfa0269737c6d52cc1d4.png",
     "index.html": "/adventure-time/index.html",
-    "main.073c9b0a.css.map": "/adventure-time/static/css/main.073c9b0a.css.map",
-    "main.e3f476d1.js.map": "/adventure-time/static/js/main.e3f476d1.js.map",
-    "787.dd7c9d13.chunk.js.map": "/adventure-time/static/js/787.dd7c9d13.chunk.js.map"
+    "main.706b0999.css.map": "/adventure-time/static/css/main.706b0999.css.map",
+    "main.0f375df4.js.map": "/adventure-time/static/js/main.0f375df4.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.e3f476d1.js"
+    "static/css/main.706b0999.css",
+    "static/js/main.0f375df4.js"
   ]
 }
