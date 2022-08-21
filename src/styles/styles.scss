@@ -1,0 +1,116 @@
+// styles
+@import './reset.scss';
+@import './variables.scss';
+@import './mixins.scss';
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
+
+#navbar {
+    position: fixed;
+    // the top important for the offset
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: top 0.3s;
+    z-index: 10;
+
+
+  .nav-list {
+    background-color: black;
+    margin: 0px;
+    padding: 0 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .nav-item {
+    list-style: none;
+    margin-right: 8%;
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: 'Outfit', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        transition: .3s ease-out;
+        
+        &:hover {
+            color: $darkred;
+        }
+    }
+    &:first-child {
+        margin-right: auto;
+        margin-left: 7%;
+    }
+    img {
+        width: 137px;
+    }
+  }  
+
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    &:hover .dropdown-content {
+        display: block;
+      }
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    min-width: 160px;
+    z-index: 2;
+    padding-top: 23px;
+    text-align: center;
+    
+   a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    border-bottom: 2px solid white;
+   &:hover {
+    background: rgba(0, 0, 0, .8);
+    color: white;
+   }
+   &:last-child {
+    border-bottom: none;
+   }
+  }
+}
+}
+
+
+// body
+  .container:first-child{
+    @include characters('../images/hero.png', #61D8FF, "../images/fin-jake.png", 413px, 340px, row);
+  }
+  .container:nth-child(2){
+    @include characters('#', #92D4F7, "../images/finn.png", 349px, 460px, row);
+  }
+  .container:nth-child(3){
+    @include characters('../images/treehouse.png', linear-gradient(180deg, #FF7E87 0%, #FFFF9B 100%), "../images/jake.png", 316px, 370px, row-reverse);
+  }
+  .container:nth-child(4){
+    @include characters('../images/spaceland.png', url('../images/space.png'), "../images/beemo.png", 268px, 281px, row);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .container:nth-child(5){
+    @include characters('', linear-gradient(177.62deg, #6754c7 2%, #0E0261 84.8%), "../images/marceline.png", 308px, 395px, row-reverse);
+  }
+  .container:nth-child(6){
+    @include characters('', linear-gradient(109.63deg, #751E58 22.66%, #0006AC 98.91%), "../images/bubblegum.png", 152px, 458px, row);
+  }
+  .container:nth-child(7){
+    @include characters('', linear-gradient(178.19deg, #6D000A 3.43%, #333333 98.5%), "../images/flame-princess.png", 300px, 423px, row-reverse);
+  }
+  .container:nth-child(8){
+    @include characters('', linear-gradient(107.45deg, #1E1EA6 4.38%, #000055 87.9%), "../images/ice-king.png", 300px, 423px, row);
+  }
+  .container:nth-child(9){
+    @include characters('../images/lemonkingdom.png',  linear-gradient(180deg, #3846AD 9.69%, #885987 23.3%, #F3BA85 45.37%, #FFFEA1 69.32%), "../images/lemongrab.png", 188px, 528px, row-reverse);
+  }

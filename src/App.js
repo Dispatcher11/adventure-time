@@ -1,10 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import Body from './components/Body';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import './styles/styles.scss';
 
 function App() {
   return (
     <div className="App">
-      <h1>Adventure time</h1>
+      <Navbar />
+      <Body />
+      <Footer />
     </div>
   );
 }
