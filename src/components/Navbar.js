@@ -22,23 +22,23 @@ const Navbar = () => {
             <img src={logo} alt="img" />
         </li>
         <li className="nav-item">
-            <a href="#">HOME</a>
+            <a href="#home">HOME</a>
         </li>
         <li className="nav-item dropdown">
-            <a href="#">CHARACTERS <i className="fas fa-caret-down"></i></a>
+            <a id="disabled" href="#">CHARACTERS <i className="fas fa-caret-down"></i></a>
               <div className="dropdown-content">
-              <a href="#">FINN</a>
-              <a href="#">JAKE</a>
-              <a href="#">BEEMO</a>
-              <a href="#">MARCELINE</a>
-              <a href="#">BUBBLEGUM</a>
-              <a href="#">FLAME PRINCESS</a>
-              <a href="#">ICE KING</a>
-              <a href="#">LEMONGRAB</a>
+              <a href="#finn">FINN</a>
+              <a href="#jake">JAKE</a>
+              <a href="#beemo">BEEMO</a>
+              <a href="#marceline">MARCELINE</a>
+              <a href="#bubblegum">BUBBLEGUM</a>
+              <a href="#flame-princess">FLAME PRINCESS</a>
+              <a href="#ice-king">ICE KING</a>
+              <a href="#lemongrab">LEMONGRAB</a>
               </div>
         </li>
         <li className="nav-item">
-            <a href="#">ABOUT</a>
+            <a href="#about">ABOUT</a>
         </li>
       </ul>
     </div>

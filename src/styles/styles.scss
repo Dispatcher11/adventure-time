@@ -4,6 +4,11 @@
 @import './mixins.scss';
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600&display=swap');
 
+
+html {
+  scroll-behavior: smooth;
+}
+
 #navbar {
     position: fixed;
     // the top important for the offset
@@ -16,6 +21,12 @@
 
   .nav-list {
     background-color: black;
+    @include mQ(450px) {
+      font-weight: 600;
+      font-size: 13px;
+      padding: 10px 0 0 0;
+    }
+
     margin: 0px;
     padding: 0 0;
     display: flex;
@@ -26,24 +37,44 @@
   .nav-item {
     list-style: none;
     margin-right: 8%;
+    @include mQ(450px) {
+      margin-right: 1%;
+    }
     a {
         text-decoration: none;
         color: white;
         font-family: 'Outfit', sans-serif;
         font-size: 20px;
+
+        @include mQ(450px) {
+          font-size: 13px;
+          margin: 0 11px;
+        }
         font-weight: 600;
         transition: .3s ease-out;
         
         &:hover {
             color: $darkred;
         }
+        
     }
+
+    #disabled {
+      pointer-events: none;
+    }
+
     &:first-child {
         margin-right: auto;
         margin-left: 7%;
+        @include mQ(450px) {
+          margin-left: 3%;
+        }
     }
     img {
         width: 137px;
+        @include mQ(450px) {
+          width: 99px;
+        }
     }
   }  
 
@@ -64,6 +95,10 @@
     z-index: 2;
     padding-top: 23px;
     text-align: center;
+    @include mQ(450px) {
+      min-width: 120px;
+    }
+
     
    a {
     color: white;
@@ -71,7 +106,14 @@
     text-decoration: none;
     font-size: 17px;
     display: block;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    
+
+    @include mQ(450px) {
+      padding: 8px 8px;
+      font-size: 13px;
+    }
+
    &:hover {
     background: rgba(0, 0, 0, .8);
     color: white;
@@ -85,6 +127,7 @@
 
 
 // body
+
   .container:first-child{
     @include characters('../images/hero.png', #61D8FF, "../images/fin-jake.png", 413px, 340px, row);
   }
@@ -113,4 +156,204 @@
   }
   .container:nth-child(9){
     @include characters('../images/lemonkingdom.png',  linear-gradient(180deg, #3846AD 9.69%, #885987 23.3%, #F3BA85 45.37%, #FFFEA1 69.32%), "../images/lemongrab.png", 188px, 528px, row-reverse);
+  }
+  
+
+@include mQ(450px)  {
+  #beemo {
+    #cover {
+      height: 100%;
+    }
+  }
+  #lemongrab {
+    #cover {
+      height: 50%;
+    }
+  }}
+  // Footer
+  .footer {
+    background-color: black;
+
+  .one {
+    background: #1A1A1A;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;     
+    p {
+      width: 60%;
+      font-family: 'outfit';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 128.69%;
+      letter-spacing: 0.045em;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+
+      input:focus, textarea:focus, select:focus{
+        outline: none;
+    }
+    
+      p {
+        text-align: left;
+        width: 100%;
+        font-weight: 500;
+        line-height: 0;
+        margin-top: 5%;
+      }
+
+      #name, #comment {
+        background-color: #393939;
+        color: #fff;
+       font-family: 'Roboto';
+       font-style: normal;
+       font-weight: 400;
+       font-size: 17px;
+       line-height: 128.69%;
+       /* or 18px */
+       width: 100%;
+       letter-spacing: 0.045em;
+       padding: 12px 10px 12px 10px;
+       box-sizing: border-box;
+       border-radius: 4px;
+       border: none;
+       margin: 5px;
+      }
+
+      button {
+        width: 100%;
+        padding: 13px 0px;
+        border-radius: 4px;
+        background: #009FDC;
+        color: white;
+        font-weight: 600;
+        transition: .3s ease-out;
+        &:hover {
+          background: lighten(#009FDC, 5%);;
+        }
+      }
+    }
+  }
+  .two {
+    padding: 20px 0;
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    
+
+    .item1 {
+      width: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: center;
+
+      a {
+        display: block;
+        text-decoration: none;
+        font-family: 'Roboto';
+        font-style: bold;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 228.69%;
+        color: rgb(171, 171, 171);
+        pointer-events: none;
+      }
+
+    }
+
+    .item2 {
+      img {
+        width: 150px;
+      }
+    }
+  }
+
+
+  }
+
+  @include mQ(450px) {
+
+    .footer {  
+    .one {      
+      p {
+        width: 78%;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        letter-spacing: 0.045em;
+        text-align: left;
+        
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 78%;
+  
+        input:focus, textarea:focus, select:focus{
+          outline: none;
+      }
+      
+        p {
+          text-align: left;
+          width: 100%;
+          font-weight: 500;
+          line-height: 0;
+          margin-top: 5%;
+        }
+  
+        #name, #comment {
+         font-weight: 400;
+         font-size: 15px;
+         padding: 10px 10px 10px 10px;
+         margin: 4px;
+        }
+      }
+    }
+    .two {
+      padding: 20px 0 0 0;
+      width: 80%;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+  
+      .item1 {
+        width: auto;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        text-align: center;
+  
+        a {
+          font-size: 16px;
+          color: #fff;
+        }
+  
+      }
+  
+      .item2 {
+        img {
+          width: 120px;
+        }
+      }
+    }
+  
+  
+    }
+  
+  
   }

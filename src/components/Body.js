@@ -5,7 +5,7 @@ const Body = () => {
     return ( 
         <div className="body">
             
-                <div className="container">
+                <div className="container" id="home">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[0].name}</h1>
@@ -16,7 +16,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="finn" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[1].name}</h1>
@@ -27,7 +27,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="jake" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[2].name}</h1>
@@ -38,7 +38,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="beemo" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[3].name}</h1>
@@ -49,7 +49,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="marceline" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[4].name}</h1>
@@ -60,7 +60,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="bubblegum" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[5].name}</h1>
@@ -71,7 +71,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="flame-princess" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[6].name}</h1>
@@ -82,7 +82,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="ice-king" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[7].name}</h1>
@@ -93,7 +93,7 @@ const Body = () => {
                 </div>
             </div>
 
-            <div className="container">
+            <div id="lemongrab" className="container">
                 <div id="cover"></div>
                 <div className="text-container">
                     <h1>{characters[8].name}</h1>
