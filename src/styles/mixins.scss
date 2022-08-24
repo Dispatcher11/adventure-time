@@ -1,11 +1,24 @@
 // Mixins
 
+// Media queries
+@mixin mQ($args...) {
+    @if length($args) == 1 {
+       @media screen and (max-width: nth($args, 1)) {
+        @content;
+    }
+ }
+ @if length($args) == 2 {
+    @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)) {
+        @content;
+    }
+ }
+}
 // headline for desktops
 @mixin headline {
-    font-family: 'Outfit';
+    font-family: 'Palanquin Dark', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 60px;
+    font-size: 57px;
     line-height: 10px;
     text-align: left;
     text-transform: capitalize;
@@ -15,14 +28,15 @@
 
 // paragraph text for desktops
 @mixin paragraph {
-    font-family: 'Roboto';
+    // font-family: 'Roboto';
+    font-family: 'Rubik', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    font-size: 27px;
+    font-weight: 300;
+    font-size: 25px;
     line-height: 128.69%;
-    letter-spacing: 0.045em;
-    color: #FFFFFF;
-    text-shadow: 0px 4px 22px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.025em;
+    color: #efefef;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 // character
@@ -35,14 +49,16 @@
     flex-direction: $direction;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
     
+
     @include mQ(450px) {
         height: 844px;
         flex-direction: column;
         justify-content: space-evenly;
     }
 
-    @include mQ(450px) {
+    @include mQ(650px, 450px) {
         height: 844px;
         flex-direction: column;
         justify-content: space-evenly;
@@ -55,7 +71,9 @@
         background-size: cover;
         background-repeat: no-repeat;
 
-        @include mQ(967px) {
+      @include floating(6s, 0s, 12px);
+
+        @include mQ(1000px, 450px) {
             width: ($width / 1.2);
             height: ($height / 1.2);
         }
@@ -63,24 +81,41 @@
             width: ($width / 1.5);
             height: ($height / 1.5);
         }
-
-
     }
+    .opacityimg {
+        @include opacity(.5s, 1.3s) 
+       }
+       
     .text-container {
         z-index: 1;
         width: 550px;
+        @include mQ(1000px, 450px) {
+            width: 40%;
+        }
+
+        @include mQ(650px, 450px) {
+            width: 70%;
+            text-align: center;
+        }
+
         @include mQ(450px) {
             width: 80%;
         }
         h1 {
             @include headline;
+
+            @include mQ(650px, 450px) {
+                text-align: center;
+            }
+
             @include mQ(450px) {
                 font-weight: 500;
                 font-size: 33px;
             }
-            @include mQ(450px) {
+            @include mQ(1000px, 450px) {
                 font-weight: 500;
-                font-size: 33px;
+                font-size: 45px;
+                line-height: 90%;
             }
         }
         p {
@@ -89,6 +124,10 @@
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 128.69%;
+            }
+            @include mQ(1000px, 450px) {
+                font-weight: 500;
+                font-size: 24px;
             }
         }
     }
@@ -106,16 +145,244 @@
         }
     }
 }
-// Media queries
-@mixin mQ($args...) {
-    @if length($args) == 1 {
-       @media screen and (max-width: nth($args, 1)) {
-        @content;
+
+
+// Face reveal animations
+// TranslateX, width, height, unopacity, scale
+@mixin unopacity($time, $delay){
+    animation: unopacity $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes unopacity {
+        from {
+        }
+        to {
+            opacity: 0;
+            z-index: 0;
+        }
     }
- }
- @if length($args) == 2 {
-    @media screen and (max-width: nth($args, 1)) and (min-width: nth($args, 2)) {
-        @content;
-    }
- }
 }
+
+@mixin translatex($time, $delay){
+    animation: translatex $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes translatex {
+        from {
+        }
+        to {
+            transform:translateX(100%);
+            z-index: 0;
+        }
+    }
+}
+
+@mixin translateminus($time, $delay){
+    animation: translateminus $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes translateminus {
+        from {
+        }
+        to {
+            transform:translateX(-100%);
+            z-index: 0;
+        }
+    }
+}
+
+@mixin scale($time, $delay){
+    animation: scale $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes scale {
+        from {
+        }
+        to {
+            width: 500%;
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+}
+
+@mixin width($time, $delay){
+    animation: width $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes width {
+        from {
+        }
+        to {
+            transform: scaleX(0);
+            z-index: 0;
+        }
+    }
+}
+
+@mixin height($time, $delay){
+    animation: height $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes height {
+        0% {
+        }
+        100% {
+            transform: scaleY(0);
+            z-index: 0;
+        }
+    }
+}
+
+@mixin stretch($time, $delay){
+    animation: stretch $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes stretch {
+        0% {
+        }
+        100% {
+            transform: scaleX(6);
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+}
+
+@mixin shake($time, $delay){
+    animation: shake $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes shake {
+        0% {
+        }
+        90% {
+            transform:translateX(100%)
+             rotate(180deg);
+        }
+        100% {
+            transform:translateX(100%)
+             rotate(180deg);
+            z-index: 0;
+        }
+    }
+}
+// Face creator
+@mixin face($color, $image, $width) {
+    .face-background {
+    background-color: $color;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .face {
+    width: $width;
+    height: inherit;
+    background: url($image);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  }
+}
+
+// Clouds maker
+@mixin clouds($image, $width, $height, $top, $left) {
+        position: absolute;
+        background: url($image);
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: $height;
+        width: $width;
+        left: $left;
+        top: $top;    
+}
+
+// Objects Animations
+@mixin floating($time, $delay, $y){
+    animation: floating $time $delay ease-in-out infinite;
+    transition: .3s;
+    @keyframes floating {
+        0% {
+            transform: translateY($y);
+        }
+        50% {
+            transform: translateY(-$y);
+        }
+        100% {
+            transform: translateY($y);
+        }
+    }
+}
+
+@mixin floatingx($time, $delay, $y, $rotation){
+    animation: floatingx $time $delay ease-in-out infinite;
+    transition: .3s;
+    @keyframes floatingx {
+        0% {
+            transform: translateY($y);
+        }
+        50% {
+            transform: translateY(-$y) rotate($rotation);
+        }
+        100% {
+            transform: translateY($y);
+        }
+    }
+}
+
+@mixin wind($time, $delay, $X){
+    animation: wind $time $delay ease-in-out infinite;
+    transition: .3s;
+    @keyframes wind {
+        0% {
+            transform: translateX($X);
+        }
+        50% {
+            transform: translateX($X * 2);
+        }
+        100% {
+            transform: translateX($X);
+        }
+    }
+}
+
+@mixin opacity($time, $delay){
+    opacity: 0;
+    animation: opacity $time $delay cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+// @mixin floating($args...) {
+//     animation: floating nth($args, 1) nth($args, 2) ease-in-out infinite;
+//     transition: .3s;
+//     @if length($args) == 3 {
+//         @keyframes floating {
+//             0% {
+//                 transform: translateY(nth($args, 3));
+//             }
+//             50% {
+//                 transform: translateY(-(nth($args, 3)));
+//             }
+//             100% {
+//                 transform: translateY(nth($args, 3));
+//             }
+//         }
+//     }
+//     @if length($args) == 4 {
+//         @keyframes floating {
+//             0% {
+//                 transform: translateY(nth($args, 3));
+//             }
+//             50% {
+//                 transform: translateY(-(nth($args, 3))) rotate(nth($args, 4));
+//             }
+//             100% {
+//                 transform: translateY(nth($args, 3));
+//             }
+//         }
+//     }
+// }
+
