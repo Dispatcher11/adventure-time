@@ -20,7 +20,8 @@ const Body = () => {
                     <div className="cloud1"></div>
                     <div className="cloud2"></div>
 
-                                <div className="face-background"><div className="face"></div></div>
+                                <div className="face-background active"><div className="face"></div></div>
+                                
                 <div className="text-container opacity">
                     <h1>{characters[0].name}</h1>
                     <p>{characters[0].text}</p>
@@ -30,91 +31,139 @@ const Body = () => {
 
             <div id="finn" className="container">
                 <div id="cover"></div>
-                    <div className="clouds" style={{top:'80px', left: "984px", width:"400px", height:"100px"}}></div>
-                    <div className="clouds" style={{top:'260px', left: "562px", width:"500px", height:"125px"}}></div>
-                    <div className="clouds" style={{top:'460px', left: "1200px", width:"400px", height:"100px"}}></div>
-                    <div className="clouds" style={{top:'600px', left: "200px", width:"400px", height:"100px"}}></div>
-                    <div className="clouds" style={{top:'400px', left: "-100px", width:"400px", height:"100px"}}></div>
-                    <div className="clouds-medium" style={{top:'160px', left: "80px", width:"200px", height:"50px"}}></div>
-                    <div className="clouds-medium" style={{top:'50px', left: "480px", width:"200px", height:"50px"}}></div>
-                    <div className="clouds-medium" style={{top:'600px', left: "900px", width:"200px", height:"50px"}}></div>
+                    <div className="clouds"></div>
+                    <div className="clouds"></div>
+                    <div className="clouds"></div>
+                    <div className="clouds"></div>
+                    <div className="clouds"></div>
+                    <div className="clouds-medium1 clouds-medium"></div>
+                    <div className="clouds-medium2 clouds-medium"></div>
+                    <div className="clouds-medium3 clouds-medium"></div>
 
-                <div ref={finn} className={myElementIsVisible1 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div className={myElementIsVisible1 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible1 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[1].name} </h1>
-                    <p>{characters[1].text}</p>
+                    <p ref={finn}>{characters[1].text}</p>
                 </div>
                 <div className={myElementIsVisible1 ? 'opacityimg' : ''}><div className="img-container"></div></div>
             </div>
 
             <div id="jake" className="container">
                 <div id="cover"></div>
-                <div ref={jake} className={myElementIsVisible2 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div className="clouds" style={{top:'160px', left: "400px", width:"400px", height:"100px"}}></div>
+                <div className="clouds" style={{top:'230px', left: "1189px", width:"320px", height:"80px"}}></div>
+                <div className="clouds" style={{top:'20px', left: "800px", width:"400px", height:"100px"}}></div>
+                <div className="clouds2" style={{top:'70px', left: "50px", width:"250px", height:"72px"}}></div>
+                <div className="clouds2" style={{top:'50px', left: "280px", width:"300px", height:"72px"}}></div>
+
+                <div className={myElementIsVisible2 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible2 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[2].name}</h1>
-                    <p>{characters[2].text}</p>
+                    <p ref={jake}>{characters[2].text}</p>
                 </div>
                 <div className={myElementIsVisible2 ? 'opacityimg' : ''}><div className="img-container"></div></div>
             </div>
 
             <div id="beemo" className="container">
                 <div id="cover"></div>
-                                <div ref={beemo} className={myElementIsVisible3 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div id="cover2"></div>
+                                <div className={myElementIsVisible3 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible3 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[3].name}</h1>
-                    <p>{characters[3].text}</p>
+                    <p ref={beemo}>{characters[3].text}</p>
                 </div>
                 <div className={myElementIsVisible3 ? 'opacityimg' : ''}><div className="img-container"></div></div>
             </div>
 
-            <div id="marceline" className="container">
-                <div id="cover"></div>
-                                <div ref={marceline} className={myElementIsVisible4 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
-                <div className={myElementIsVisible4 ? 'text-container opacity' : 'text-container'}>
-                    <h1>{characters[4].name}</h1>
-                    <p>{characters[4].text}</p>
-                </div>
-                <div className={myElementIsVisible4 ? 'opacityimg' : ''}><div className="img-container"></div></div>
-            </div>
-
             <div id="bubblegum" className="container">
+            <div className="bubbles">
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+          </div>
                 <div id="cover"></div>
-                                <div ref={bubblegum} className={myElementIsVisible5 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div className="clouds" style={{top:'53%', left: "984px", width:"800px", height:"400px"}}></div>
+                <div className="clouds2" style={{top:'52%', left: "684px", width:"800px", height:"400px", zIndex: "3"}}></div>
+                <div className="clouds" style={{top:'53%', left: "184px", width:"800px", height:"400px"}}></div>
+                <div className="clouds2" style={{top:'53%', left: "484px", width:"800px", height:"400px"}}></div>
+                <div className="clouds" style={{top:'56%', left: "784px", width:"800px", height:"400px", zIndex: "3"}}></div>
+                <div className="clouds2" style={{top:'53%', left: "-184px", width:"800px", height:"400px"}}></div>
+                <div className="clouds" style={{top:'53%', left: "0px", width:"800px", height:"400px"}}></div>
+                <div className="clouds2" style={{top:'52%', left: "50px", width:"900px", height:"450px", zIndex: "3"}}></div>
+
+                <div id="moon"></div>
+
+                                <div className={myElementIsVisible5 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible5 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[5].name}</h1>
-                    <p>{characters[5].text}</p>
+                    <p ref={bubblegum}>{characters[5].text}</p>
                 </div>
                 <div className={myElementIsVisible5 ? 'opacityimg' : ''}><div className="img-container"></div></div>
+            </div>
+            
+            <div id="lemongrab" className="container">
+                <div id="cover"></div>   
+                 <div className="clouds"></div>
+                <div className="clouds"></div>
+                <div className="clouds"></div>
+                <div className="clouds"></div>
+                
+                                <div className={myElementIsVisible8 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div className={myElementIsVisible8 ? 'text-container opacity' : 'text-container'}>
+                    <h1>{characters[8].name}</h1>
+                    <p ref={lemongrab}>{characters[8].text}</p>
+                </div>
+                <div className={myElementIsVisible8 ? 'opacityimg' : ''}><div className="img-container"></div></div>
             </div>
 
             <div id="flame-princess" className="container">
                 <div id="cover"></div>
-                                <div ref={flame} className={myElementIsVisible6 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div id="cover"></div>
+                <div id="cover"></div>
+                                <div className={myElementIsVisible6 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible6 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[6].name}</h1>
-                    <p>{characters[6].text}</p>
+                    <p ref={flame}>{characters[6].text}</p>
                 </div>
                 <div className={myElementIsVisible6 ? 'opacityimg' : ''}><div className="img-container"></div></div>
             </div>
 
             <div id="ice-king" className="container">
                 <div id="cover"></div>
-                                <div ref={ice} className={myElementIsVisible7 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div id="moon"></div>
+                <div className="cloud1"></div>
+                <div className="cloud2"></div>
+                                <div className={myElementIsVisible7 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible7 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[7].name}</h1>
-                    <p>{characters[7].text}</p>
+                    <p ref={ice}>{characters[7].text}</p>
                 </div>
                 <div className={myElementIsVisible7 ? 'opacityimg' : ''}><div className="img-container"></div></div>
             </div>
 
-            <div id="lemongrab" className="container">
+            <div id="marceline" className="container"  ref={marceline}>
                 <div id="cover"></div>
-                                <div ref={lemongrab} className={myElementIsVisible8 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
-                <div className={myElementIsVisible8 ? 'text-container opacity' : 'text-container'}>
-                    <h1>{characters[8].name}</h1>
-                    <p>{characters[8].text}</p>
+                {/* sky */}
+                <div className="background-container">
+          {/* <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/moon2.png" alt="" /> */}
+          <div className="stars"></div>
+          <div className="twinkling"></div>
+          <div className="clouds"></div>
+          </div>
+          {/* {sky} */}
+                                <div className={myElementIsVisible4 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
+                <div className={myElementIsVisible4 ? 'text-container opacity' : 'text-container'}>
+                    <h1>{characters[4].name}</h1>
+                    <p>{characters[4].text}</p>
                 </div>
-                <div className={myElementIsVisible8 ? 'opacityimg' : ''}><div className="img-container"></div></div>
+                <div className={myElementIsVisible4 ? 'opacityimg' : ''}><div className="img-container"></div></div>
             </div>
 
         </div>

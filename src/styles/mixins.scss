@@ -83,7 +83,7 @@
         }
     }
     .opacityimg {
-        @include opacity(.5s, 1.3s) 
+        @include opacity(.5s, 1.3s);
        }
        
     .text-container {
@@ -138,8 +138,9 @@
         position: absolute;
         background-size: cover;
         background-repeat: no-repeat;
-        z-index: 0;
+        z-index: 2;
         bottom: 0px;
+
         @include mQ(450px) {
             height: 27%;
         }
@@ -170,6 +171,18 @@
         }
         to {
             transform:translateX(100%);
+            z-index: 0;
+        }
+    }
+}
+@mixin translatey($time, $delay){
+    animation: translatey $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    @keyframes translatey {
+        from {
+        }
+        to {
+            transform:translateY(-100%);
             z-index: 0;
         }
     }
@@ -227,6 +240,19 @@
         }
     }
 }
+@mixin rotate($time, $delay){
+    animation: rotate $time $delay linear both;
+    transition: .3s;
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg) scale(2);
+        }
+        100% {
+            transform: rotate(25000deg) scale(2);
+            z-index: 0;
+        }
+    }
+}
 
 @mixin stretch($time, $delay){
     animation: stretch $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
@@ -259,6 +285,46 @@
         }
     }
 }
+
+@mixin colorful($time, $delay){
+    animation: colorful $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
+    transition: .3s;
+    z-index: 10;
+    transform-origin: 19% 70%;
+    @keyframes colorful {
+        0% {
+            background-color: white;
+        }
+        20% {
+            transform: scale(1);
+            background-color: white;
+        }
+        // 12.5% {
+        //     background-color: #fc0;
+        // }
+        // 25% {
+        //     background-color: #63BDA4;
+        // }
+        // 37.5% {
+        //     background-color: #E36FAB;
+        // }
+        // 50% {
+        //     background-color: #ff4208;
+        // }
+        // 72.5% {
+        //     background-color: #1E1EA6;
+        // }
+        // 99% {
+        //     background-color: white;
+        // }
+        100% {
+            background-color: #1943FF;
+            transform: scale(10);
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+}
 // Face creator
 @mixin face($color, $image, $width) {
     .face-background {
@@ -284,6 +350,7 @@
 // Clouds maker
 @mixin clouds($image, $width, $height, $top, $left) {
         position: absolute;
+        z-index: 1;
         background: url($image);
         background-size: cover;
         background-repeat: no-repeat;
@@ -345,12 +412,52 @@
 @mixin opacity($time, $delay){
     opacity: 0;
     animation: opacity $time $delay cubic-bezier(0.77, 0, 0.175, 1) forwards;
+    z-index: 2;
     @keyframes opacity {
         0% {
             opacity: 0;
         }
         100% {
             opacity: 1;
+        }
+    }
+}
+
+@mixin flames($time, $delay, $degy){
+    animation: flames $time $delay ease-in-out infinite both;
+    z-index: 2;
+    
+    @keyframes flames {
+        0% {
+          transform: skewX(0deg);
+        }
+        50% {
+            transform: skew(10deg, 2deg)
+             translateY($degy);
+            opacity: .9;
+        }
+                50% {
+            transform: skew(10deg, 2deg)
+             translateY($degy);
+            opacity: .9;
+        }
+        100% {
+            transform: skewX(0deg);
+        }
+    }
+}
+
+@mixin blurr($time, $delay){
+    animation: blurr $time $delay linear infinite both;
+    @keyframes blurr {
+        0% {
+            filter: blur(0);
+        }
+        50% {
+            filter: blur(2px);
+        }
+        100% {
+            filter: blur(0);
         }
     }
 }
@@ -386,3 +493,229 @@
 //     }
 // }
 
+// night sky
+@mixin night-sky() {
+@keyframes move-background {
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  @-webkit-keyframes move-background {
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  
+  @-moz-keyframes move-background {    
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  
+      @-webkit-keyframes move-background {
+    from {
+      -webkit-transform: translate3d(0px, 0px, 0px);
+    }
+    to { 
+      -webkit-transform: translate3d(1000px, 0px, 0px);
+    }
+  }
+  
+  .background-container{
+    position: absolute;
+    top: 0;
+    left:0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .stars {
+   background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+   position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+      z-index: 0;
+  }
+  
+  .twinkling{
+    width:10000px;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      
+      -moz-animation:move-background 70s linear infinite;
+    -ms-animation:move-background 70s linear infinite;
+    -o-animation:move-background 70s linear infinite;
+    -webkit-animation:move-background 70s linear infinite;
+    animation:move-background 70s linear infinite;
+    
+  }
+  
+  .clouds{
+    width:10000px;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+    background-size: 1000px 1000px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+  
+     -moz-animation:move-background 150s linear infinite;
+    -ms-animation:move-background 150s linear infinite;
+    -o-animation:move-background 150s linear infinite;
+    -webkit-animation:move-background 150s linear infinite;
+    animation:move-background 150s linear infinite;
+  }
+  // img{
+  //   height: 70vh;
+  //   width:70vh;
+  //   position: absolute;
+  //   z-index: 2;
+  //   right: 20px;
+  // }
+  // sky
+  }
+
+// bubbles
+@mixin bubbles {
+
+.bubbles{
+    position:absolute;
+    width:100%;
+    height: 100%;
+    z-index:0;
+    overflow:hidden;
+    top:0;
+    left:0;
+
+  .bubble{
+    position: absolute;
+    bottom:-100px;
+    width:40px;
+    height: 40px;
+    background:#f1f1f1;
+    border-radius:50%;
+    opacity:0.5;
+    animation: rise 10s infinite ease-in;
+  }
+  .bubble:nth-child(1){
+    width:40px;
+    height:40px;
+    left:10%;
+    animation-duration:8s;
+  }
+  .bubble:nth-child(2){
+    width:20px;
+    height:20px;
+    left:20%;
+    animation-duration:5s;
+    animation-delay:1s;
+  }
+  .bubble:nth-child(3){
+    width:50px;
+    height:50px;
+    left:35%;
+    animation-duration:7s;
+    animation-delay:2s;
+  }
+  .bubble:nth-child(4){
+    width:80px * .5;
+    height:80px * .5;
+    left:50%;
+    animation-duration:11s;
+    animation-delay:0s;
+  }
+  .bubble:nth-child(5){
+    width:35px;
+    height:35px;
+    left:55%;
+    animation-duration:6s;
+    animation-delay:1s;
+  }
+  .bubble:nth-child(6){
+    width:45px;
+    height:45px;
+    left:65%;
+    animation-duration:8s;
+    animation-delay:3s;
+  }
+  .bubble:nth-child(7){
+    width:90px * .5;
+    height:90px * .5;
+    left:70%;
+    animation-duration:12s;
+    animation-delay:2s;
+  }
+  .bubble:nth-child(8){
+    width:25px;
+    height:25px;
+    left:80%;
+    animation-duration:6s;
+    animation-delay:2s;
+  }
+  .bubble:nth-child(9){
+    width:15px;
+    height:15px;
+    left:70%;
+    animation-duration:5s;
+    animation-delay:1s;
+  }
+  .bubble:nth-child(10){
+    width:90px * .5;
+    height:90px * .5;
+    left:25%;
+    animation-duration:10s;
+    animation-delay:4s;
+  }
+  @keyframes rise{
+    0%{
+      bottom:-100px;
+      transform:translateX(0);
+    }
+    50%{
+      transform:translate(100px);
+    }
+    100%{
+      bottom:1080px;
+      transform:translateX(-200px);
+    }
+  }
+}
+}
+
+// moon 
+@mixin moon {
+    #moon {
+        width: 100px;
+        height: 100px;
+        background-color: transparent;
+        position: absolute;
+        top: 10%;
+        left: 15%;
+        border-radius: 50%;
+        /* I set 2 shadows where the first one doesn't have blur and spread for firefox fix. */
+        box-shadow: inset 0px 16px #E8F8F9, inset 0px 16px 1px 1px #E8F8F9;
+        -moz-box-shadow: inset 0px 16px #E8F8F9, inset 0px 16px 1px 12px #E8F8F9; 
+        transform: rotate(-110deg);
+        @include blurr(4s, 0s);
+       }
+}

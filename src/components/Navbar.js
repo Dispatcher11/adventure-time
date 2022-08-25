@@ -30,11 +30,11 @@ const Navbar = () => {
               <a href="#finn">FINN</a>
               <a href="#jake">JAKE</a>
               <a href="#beemo">BEEMO</a>
-              <a href="#marceline">MARCELINE</a>
               <a href="#bubblegum">BUBBLEGUM</a>
+              <a href="#lemongrab">LEMONGRAB</a>
               <a href="#flame-princess">FLAME PRINCESS</a>
               <a href="#ice-king">ICE KING</a>
-              <a href="#lemongrab">LEMONGRAB</a>
+              <a href="#marceline">MARCELINE</a>
               </div>
         </li>
         <li className="nav-item">

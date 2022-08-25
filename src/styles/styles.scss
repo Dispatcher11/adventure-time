@@ -159,16 +159,23 @@ html {
     .opacity {
       @include opacity(1s, 1.5s)
     }
-
-  
+    @include face(#fff, '../images/hero-adventure.png', 80%);
+    
+    .active {
+      @include colorful(3s, 0s);
+    }
+    .face {
+      height: 70% !important;
+      @include colorful(1.5s, 0s);
+    }
 
   .cloud1 {
     @include clouds('../images/hero-cloud.png', 380px, 142px, 53px, 50px);
-    @include floating(6s, 0s, 6px)
+    @include floating(6s, 0s, 6px);
   }
   .cloud2 {
     @include clouds('../images/hero-cloud.png', 288px, 120px, 90px, 371px);
-    @include floating(7s, 0s, 6px)
+    @include floating(7s, 0s, 6px);
   }
    } 
 
@@ -177,17 +184,73 @@ html {
     @include face(#fff, '../images/finn-face.jpg', 80%);
     .clouds {
       @include clouds('../images/bigasscloud.png', 0px, 142px, 53px, 50px);
-      @include wind(20s, 0s, 10%)
+      @include wind(20s, 0s, 10%);
     }
+    .clouds:nth-child(2) {
+      top: 80px;
+      left: 984px;
+      width: 400px;
+      height: 100px;
+    }
+    .clouds:nth-child(3) {
+      top: 260px;
+      left: 562px;
+      width: 500px;
+      height: 125px;
+    }
+    .clouds:nth-child(4) {
+      top: 460px;
+      left: 1200px;
+      width: 400px;
+      height: 100px;
+    }
+    .clouds:nth-child(5) {
+      top: 600px;
+      left: 200px;
+      width: 400px;
+      height: 100px;
+    }
+    .clouds:nth-child(6) {
+      top: 400px;
+      left: -100px;
+      width: 400px;
+      height: 100px;
+    }
+
+
     .clouds-medium {
-      @include clouds('../images/secondsmallasscloud.png', 480px, 342px, 53px, 50px);
-      @include wind(10s, 0s, 10%)
+      @include clouds('../images/secondsmallasscloud.png', 200px, 50px, 50px, 80px);
+      @include wind(10s, 0s, 10%);
     }
+
+    .clouds-medium1 {
+      top: 160px;
+      left: 80px;
+      width: 200px;
+      height: 50px;
+    }
+
+    .clouds-medium2 {
+      top: 50px;
+      left: 480px;
+      width: 200px;
+      height: 50px;
+    }
+
+    .clouds-medium3 {
+      top: 600px;
+      left: 900px;
+      width: 200px;
+      height: 50px;
+    }
+
+
+
     .active {
       @include translatex(1.5s, .3s);
       }    
 .opacity {
-      @include opacity(1s, 1.5s)
+      @include opacity(1s, 1.5s);
     }
     
   }
@@ -195,6 +258,14 @@ html {
   .container:nth-child(3){
     @include characters('../images/treehouse.png', linear-gradient(180deg, #FF7E87 0%, #FFFF9B 100%), "../images/jake.png", 316px, 370px, row-reverse);
     @include face(#fc0, '../images/jake-face.jpg', 80%);
+    .clouds {
+      @include clouds('../images/jake-cloud.png', 0px, 142px, 53px, 50px);
+      @include wind(30s, 0s, 0%);
+    }
+    .clouds2 {
+      @include clouds('../images/jake-cloud2.png', 0px, 142px, 53px, 50px);
+      @include wind(20s, 0s, 10%);
+    }
     .active {
       @include translateminus(1.5s, .3s);
       }    
@@ -207,9 +278,11 @@ html {
     @include characters('../images/spaceland.png', url('../images/space.png'), "../images/beemo.png", 268px, 281px, row);
     background-size: cover;
     background-repeat: no-repeat;
+    z-index: 0;
+
     @include face(#63BDA4, '../images/beemo-face.jpg', 90%);
     .active {
-      @include height(1.5s, .3s);
+      @include translatey(1.5s, .3s);
     }
     .opacity {
       @include opacity(1s, 1.5s)
@@ -218,52 +291,131 @@ html {
       #cover {
         width: 100%;
         background: url("../images/spacelandResponsive.png");
+        z-index: 2;
    }   
    }
+
+   #cover2 {
+    background: url('../images/space.png');
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+    bottom: 0px;
+    @include rotate(5000s, 0s)
+     }
   }
+
+  
   .container:nth-child(5){
-    @include characters('', linear-gradient(177.62deg, #6754c7 2%, #0E0261 84.8%), "../images/marceline.png", 308px, 395px, row-reverse);
-    @include face(#050a1e, '../images/marceline-face.jpg', 90%);
-    .active {
-      @include unopacity(1.5s, .3s);
+    @include characters('', linear-gradient(109.63deg, #751E58 22.66%, #0006AC 98.91%), "../images/bubblegum1.png", 152px, 458px, row);
+    @include face(#E36FAB, '../images/queenbubblegum-face.png', 100%);
+    .face-background {
+      z-index: 4;
     }
-    .img-container {
-      @include floating(6s, 0s, 12px);
+    .active {
+      @include stretch(1.5s, .3s);
+      }    
+.opacity {
+      @include opacity(1s, 1.5s);
+    }
+    .clouds {
+      @include clouds('../images/candyclouds.png', 0px, 142px, 53px, 50px);
+      @include wind(20s, 0s, 10%);
+    }
+    .clouds2 {
+      @include clouds('../images/candyclouds.png', 0px, 142px, 53px, 50px);
+      @include wind(15s, 0s, 8%);
+    }
+  @include moon;
+
+   @include bubbles;
+  }
+  
+  
+  .container:nth-child(6){
+    @include characters('../images/lemonkingdom.png',  linear-gradient(180deg, #3846AD 9.69%, #885987 23.3%, #F3BA85 45.37%, #FFFEA1 69.32%), "../images/lemongrab.png", 188px * .8, 528px * .8, row-reverse);
+    @include face(#FFFF00, '../images/lemongrab-face.png', 100%);
+    .active {
+      @include translatex(1.5s, .3s);
       }    
 .opacity {
       @include opacity(1s, 1.5s)
     }
 
+    .clouds {
+      @include clouds('../images/lemon-cloud.png', 380px * 4, 142px * 4, -303px, 100px);
+      @include floating(15s, 0s, 5%);
+      z-index: 0;
+    }
+    .clouds:nth-child(2) {
+      @include clouds('../images/lemon-cloud.png', 380px, 142px, 103px, 606px);
+      @include floating(10s, 1s, 5%);
+    }
+    .clouds:nth-child(3) {
+      @include clouds('../images/lemon-cloud.png', 380px * .9, 142px * .9, 153px, 1000px);
+      @include floating(10s, 0s, 6%);
+    }
+
+    .clouds:nth-child(4) {
+      @include clouds('../images/lemon-cloud.png', 380px * .5, 142px * .5, 103px, 50px);
+      @include floating(5s, 0s, 10%);
+    }
+
   }
   
-  .container:nth-child(6){
-    @include characters('', linear-gradient(109.63deg, #751E58 22.66%, #0006AC 98.91%), "../images/bubblegum.png", 152px, 458px, row);
-    @include face(#050a1e, '../images/queenbubblegum-face.png', 100%);
-    .active {
-      @include stretch(1.5s, .3s);
-      }    
-.opacity {
-      @include opacity(1s, 1.5s)
+  #lemongrab {
+    #cover {
+      height: 110%;
     }
   }
-  
+
+@include mQ(450px)  {
+  #lemongrab {
+    #cover {
+      height: 50%;
+    }
+  }
+}
+
   .container:nth-child(7){
-    @include characters('', linear-gradient(178.19deg, #6D000A 3.43%, #333333 98.5%), "../images/flame-princess.png", 300px, 423px, row-reverse);
+    @include characters('../images/flames.png', linear-gradient(178.19deg, #6D000A 3.43%, #333333 98.5%), "../images/flame-princess2.png", 300px, 423px, row-reverse);
     @include face(#ff4208, '../images/flame-face.jpg', 100%);
     .active {
       @include scale(1.5s, .3s);
+    }
+    #cover:first-child {
+      height: 50%;
+      bottom: -30px;
+      width: 120%;
+      @include flames(.7s, 0s, 20px);
+    }
+    #cover:nth-child(2) {
+      height: 45%;
+      bottom: -20px;
+      width: 140%;
+      @include flames(.8s, .3s, -430px);
+    }
+    #cover:nth-child(3) {
+      height: 35%;
+      width: 150%;
+      bottom: -30px;
+      @include flames(.6s, 1s, 20px);
+
     }
     .img-container {
       @include floating(6s, 0s, 12px);
       }    
 .opacity {
-      @include opacity(1s, 1.5s)
+      @include opacity(1s, 1.5s);
     }
   }
   
   .container:nth-child(8){
-    @include characters('', linear-gradient(107.45deg, #1E1EA6 4.38%, #000055 87.9%), "../images/ice-king.png", 300px, 423px, row);
-    @include face(#050a1e, '../images/ice-king-face.jpg', 100%);
+    @include characters('../images/ice-kingdom.png', linear-gradient(107.45deg, #1E1EA6 4.38%, #000055 87.9%), "../images/ice-king.png", 300px, 423px, row);
+    @include face(#fff, '../images/ice-king-face.jpg', 100%);
     .active {
       @include translateminus(1.5s, .3s);
     }
@@ -276,32 +428,36 @@ html {
 .opacity {
       @include opacity(1s, 1.5s)
     }
-  }
-  
-  .container:nth-child(9){
-    @include characters('../images/lemonkingdom.png',  linear-gradient(180deg, #3846AD 9.69%, #885987 23.3%, #F3BA85 45.37%, #FFFEA1 69.32%), "../images/lemongrab.png", 188px, 528px, row-reverse);
-    @include face(#050a1e, '../images/lemongrab-face.png', 100%);
-    .active {
-      @include translatex(1.5s, .3s);
-      }    
-.opacity {
-      @include opacity(1s, 1.5s)
-    }
-  }
-  
-  
+  @include moon;
 
-@include mQ(450px)  {
-  #lemongrab {
-    #cover {
-      height: 50%;
-    }
+  .cloud1 {
+    @include clouds('../images/ice-cloud.png', 380px * .9, 142px * .9, 453px, 100px);
+    @include wind(10s, 0s, 10%);
+    z-index: 0;
+  }
+  .cloud2 {
+    @include clouds('../images/ice-cloud.png', 380px * 1.2, 142px * 1.2, 100px, 1048px);
+    @include wind(10s, 0s, -10%);
   }
 }
 
 
+.container:nth-child(9){
+  @include characters('', linear-gradient(177.62deg, #6754c7 2%, #0E0261 84.8%), "../images/marceline.png", 152px, 458px, row-reverse);
+  
+  @include face(#050a1e, '../images/marceline-face.jpg', 90%);
+  .active {
+    @include unopacity(1.5s, .3s);
+  }
+  .img-container {
+    @include floating(6s, 0s, 12px);
+    }    
+.opacity {
+    @include opacity(1s, 1.5s);
+  }
 
-
+  @include night-sky;
+}
   // Footer
   .footer {
     background-color: black;
