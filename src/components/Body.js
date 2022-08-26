@@ -31,6 +31,7 @@ const Body = () => {
 
             <div id="finn" className="container">
                 <div id="cover"></div>
+                <div id="clouds-container">
                     <div className="clouds"></div>
                     <div className="clouds"></div>
                     <div className="clouds"></div>
@@ -39,7 +40,7 @@ const Body = () => {
                     <div className="clouds-medium1 clouds-medium"></div>
                     <div className="clouds-medium2 clouds-medium"></div>
                     <div className="clouds-medium3 clouds-medium"></div>
-
+                    </div>
                 <div className={myElementIsVisible1 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible1 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[1].name} </h1>
@@ -50,11 +51,11 @@ const Body = () => {
 
             <div id="jake" className="container">
                 <div id="cover"></div>
-                <div className="clouds" style={{top:'160px', left: "400px", width:"400px", height:"100px"}}></div>
-                <div className="clouds" style={{top:'230px', left: "1189px", width:"320px", height:"80px"}}></div>
-                <div className="clouds" style={{top:'20px', left: "800px", width:"400px", height:"100px"}}></div>
-                <div className="clouds2" style={{top:'70px', left: "50px", width:"250px", height:"72px"}}></div>
-                <div className="clouds2" style={{top:'50px', left: "280px", width:"300px", height:"72px"}}></div>
+                <div className="clouds"></div>
+                <div className="clouds"></div>
+                <div className="clouds"></div>
+                <div className="clouds2"></div>
+                <div className="clouds2"></div>
 
                 <div className={myElementIsVisible2 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible2 ? 'text-container opacity' : 'text-container'}>
@@ -89,14 +90,14 @@ const Body = () => {
         <div className="bubble"></div>
           </div>
                 <div id="cover"></div>
-                <div className="clouds" style={{top:'53%', left: "984px", width:"800px", height:"400px"}}></div>
-                <div className="clouds2" style={{top:'52%', left: "684px", width:"800px", height:"400px", zIndex: "3"}}></div>
-                <div className="clouds" style={{top:'53%', left: "184px", width:"800px", height:"400px"}}></div>
-                <div className="clouds2" style={{top:'53%', left: "484px", width:"800px", height:"400px"}}></div>
-                <div className="clouds" style={{top:'56%', left: "784px", width:"800px", height:"400px", zIndex: "3"}}></div>
-                <div className="clouds2" style={{top:'53%', left: "-184px", width:"800px", height:"400px"}}></div>
-                <div className="clouds" style={{top:'53%', left: "0px", width:"800px", height:"400px"}}></div>
-                <div className="clouds2" style={{top:'52%', left: "50px", width:"900px", height:"450px", zIndex: "3"}}></div>
+                <div className="clouds cloud1"></div>
+                <div className="clouds2"></div>
+                <div className="clouds"></div>
+                <div className="clouds2"></div>
+                <div className="clouds"></div>
+                <div className="clouds2"></div>
+                <div className="clouds"></div>
+                {/* <div className="clouds2" style={{top:'52%', left: "50px", width:"900px", height:"450px", zIndex: "3"}}></div> */}
 
                 <div id="moon"></div>
 

@@ -70,7 +70,6 @@
         height: $height;
         background-size: cover;
         background-repeat: no-repeat;
-
       @include floating(6s, 0s, 12px);
 
         @include mQ(1000px, 450px) {
@@ -111,6 +110,7 @@
             @include mQ(450px) {
                 font-weight: 500;
                 font-size: 33px;
+                text-align: center;
             }
             @include mQ(1000px, 450px) {
                 font-weight: 500;
@@ -124,6 +124,8 @@
                 font-weight: 400;
                 font-size: 18px;
                 line-height: 128.69%;
+                text-align: center;
+
             }
             @include mQ(1000px, 450px) {
                 font-weight: 500;
@@ -141,6 +143,12 @@
         z-index: 2;
         bottom: 0px;
 
+        @include mQ(950px) {
+            height: 70%;
+        }
+        @include mQ(650px) {
+            height: 40%;
+        }
         @include mQ(450px) {
             height: 27%;
         }
@@ -338,13 +346,21 @@
     align-items: center;
     
     .face {
-    width: $width;
+    width: 100%;
     height: inherit;
     background: url($image);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+
   }
+  @include mQ(750px) {.face {height: 90%;}};
+  @include mQ(595px) {.face {height: 70%;}};
+  @include mQ(520px) {.face {height: 60%;}};
+  @include mQ(450px) {.face {height: 50%;}};
   }
+
+
 }
 
 // Clouds maker
@@ -717,5 +733,11 @@
         -moz-box-shadow: inset 0px 16px #E8F8F9, inset 0px 16px 1px 12px #E8F8F9; 
         transform: rotate(-110deg);
         @include blurr(4s, 0s);
+       }
+
+       @include mQ(650px) {
+        #moon {
+            display: none;
+        }
        }
 }

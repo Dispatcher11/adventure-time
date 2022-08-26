@@ -171,10 +171,20 @@ html {
 
   .cloud1 {
     @include clouds('../images/hero-cloud.png', 380px, 142px, 53px, 50px);
+    @include mQ(650px) {
+      @include clouds('../images/hero-cloud.png', 380px * .5, 142px * .5, 53px * 8, 50px * .7);
+    }
+
     @include floating(6s, 0s, 6px);
   }
   .cloud2 {
     @include clouds('../images/hero-cloud.png', 288px, 120px, 90px, 371px);
+    // @include mQ(650px) {
+    //   @include clouds('../images/hero-cloud.png', 288px * .5, 90px * .5, 120px * 4, 371px * .7);
+    // }
+    @include mQ(650px) {
+      @include clouds('../images/hero-cloud.png', 288px * .5, 90px * .5, 120px * 4, 371px * .7);
+    }
     @include floating(7s, 0s, 6px);
   }
    } 
@@ -188,31 +198,31 @@ html {
     }
     .clouds:nth-child(2) {
       top: 80px;
-      left: 984px;
+      left: 68%;
       width: 400px;
       height: 100px;
     }
     .clouds:nth-child(3) {
       top: 260px;
-      left: 562px;
+      left: 39%;
       width: 500px;
       height: 125px;
     }
     .clouds:nth-child(4) {
       top: 460px;
-      left: 1200px;
+      left: 83%;
       width: 400px;
       height: 100px;
     }
     .clouds:nth-child(5) {
       top: 600px;
-      left: 200px;
+      left: 14%;
       width: 400px;
       height: 100px;
     }
     .clouds:nth-child(6) {
       top: 400px;
-      left: -100px;
+      left: -7%;
       width: 400px;
       height: 100px;
     }
@@ -225,25 +235,98 @@ html {
 
     .clouds-medium1 {
       top: 160px;
-      left: 80px;
+      left: 5.5%;
       width: 200px;
       height: 50px;
     }
 
     .clouds-medium2 {
       top: 50px;
-      left: 480px;
+      left: 33%;
       width: 200px;
       height: 50px;
     }
 
     .clouds-medium3 {
       top: 600px;
-      left: 900px;
+      left: 62.5%;
       width: 200px;
       height: 50px;
     }
-
+    // media queries 
+    #clouds-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0px;
+      
+    }
+    @include mQ(844px) {
+      .clouds-medium3 {
+        display: none;
+      } 
+    }
+    @include mQ(650px) {
+      .clouds:nth-child(2) {
+        top: 80px * $clouds-top;
+        left: 68%;
+        width: 400px * $clouds;
+        height: 100px * $clouds;
+      }
+      .clouds:nth-child(3) {
+        top: 260px * $clouds-top;
+        left: 39%;
+        width: 500px * $clouds;
+        height: 125px * $clouds;
+      }
+      .clouds:nth-child(4) {
+        top: 460px * $clouds-top;
+        left: 83%;
+        width: 400px * $clouds;
+        height: 100px * $clouds;
+      }
+      .clouds:nth-child(5) {
+        top: 400px * $clouds-top;
+        left: 14%;
+        width: 400px * $clouds;
+        height: 100px * $clouds;
+      }
+      .clouds:nth-child(6) {
+        top: 400px * $clouds-top;
+        left: -7%;
+        width: 400px * $clouds;
+        height: 100px * $clouds;
+      }
+  
+  
+      .clouds-medium {
+        @include clouds('../images/secondsmallasscloud.png', 200px, 50px, 50px, 80px);
+        @include wind(10s, 0s, 10%);
+      }
+  
+      .clouds-medium1 {
+        top: 160px * $clouds-top;
+        left: 5.5%;
+        width: 200px * $clouds;
+        height: 50px * $clouds;
+      }
+  
+      .clouds-medium2 {
+        top: 50px * $clouds-top;
+        left: 33%;
+        width: 200px;
+        height: 50px;
+        display: none;
+      }
+  
+      .clouds-medium3 {
+        top: 600px * $clouds-top;
+        left: 62.5%;
+        width: 200px;
+        height: 50px;
+        display: none;
+      }
+   }
 
 
     .active {
@@ -266,12 +349,107 @@ html {
       @include clouds('../images/jake-cloud2.png', 0px, 142px, 53px, 50px);
       @include wind(20s, 0s, 10%);
     }
+      .clouds:nth-child(2) {
+          top: 160px;
+          left: 27%;
+          width: 400px;
+          height: 100px;
+         }
+         .clouds:nth-child(3) {
+          top: 230px;
+          left: 82%;
+          width: 320px;
+          height: 80px;
+         }
+         .clouds:nth-child(4) {
+          top: 20px;
+          left: 55%;
+          width: 400px;
+          height: 100px;
+         }
+         .clouds2:nth-child(5) {
+          top: 70px;
+          left: 4%;
+          width: 250px;
+          height: 72px;
+         }
+         .clouds2:nth-child(6) {
+          top: 50px;
+          left: 20%;
+          width: 300px;
+          height: 72px;
+         }
+         
+        //  Media queries
+        @include mQ(1176px) {
+          .clouds2:nth-child(6) {
+            display: none;
+           }
+        }
+
+        @include mQ(950px) {
+          .clouds:nth-child(2) {
+            top: 160px * $clouds-top;
+            left: 27%;
+            width: 400px * $clouds;
+            height: 100px * $clouds;
+           }
+           .clouds:nth-child(3) {
+            top: 230px * $clouds-top;
+            left: 82%;
+            width: 320px * $clouds;
+            height: 80px * $clouds;
+           }
+           .clouds:nth-child(4) {
+            top: 20px * $clouds-top;
+            left: 55%;
+            width: 400px * $clouds;
+            height: 100px * $clouds;
+           }
+           .clouds2:nth-child(5) {
+            top: 70px * $clouds-top;
+            left: 4%;
+            width: 250px * $clouds;
+            height: 72px * $clouds;
+           }
+           
+           @include mQ(650px) {
+            .clouds:nth-child(2) {
+              top: 240px * $clouds-top-two;
+              left: 27%;
+              width: 400px * $clouds;
+              height: 100px * $clouds;
+             }
+             .clouds:nth-child(3) {
+              top: 230px * $clouds-top-two;
+              left: 82%;
+              width: 320px * $clouds;
+              height: 80px * $clouds;
+             }
+             .clouds:nth-child(4) {
+              top: 446px;
+              left: 55%;
+              width: 217px;
+              height: 100px * $clouds;
+             }
+             .clouds2:nth-child(5) {
+              top: 200px * $clouds-top-two;
+              left: 4%;
+              width: 250px * $clouds;
+              height: 72px * $clouds;
+             }
+             
+          }
+        }
+
+
     .active {
       @include translateminus(1.5s, .3s);
       }    
 .opacity {
       @include opacity(1s, 1.5s)
     }
+    
   }
   
   .container:nth-child(4){
@@ -287,9 +465,15 @@ html {
     .opacity {
       @include opacity(1s, 1.5s)
     }
-    @include mQ(600px, 0px) {
+
+    @include mQ(1000px) {
       #cover {
-        width: 100%;
+        height: 100%;
+        z-index: 2;
+   }}   
+    @include mQ(879px) {
+      #cover {
+        height: 100%;
         background: url("../images/spacelandResponsive.png");
         z-index: 2;
    }   
@@ -327,8 +511,127 @@ html {
     }
     .clouds2 {
       @include clouds('../images/candyclouds.png', 0px, 142px, 53px, 50px);
-      @include wind(15s, 0s, 8%);
+      @include wind(15s, 0s, 5%);
     }
+    @include mQ(400px){
+      h1 {
+        line-height: 30px !important;
+      }
+  }
+
+    .clouds:nth-child(3) {
+      top: 53%;
+      left: 984px;
+      width: 800px;
+      height: 400px;
+    }
+    .clouds2:nth-child(4) {
+      top: 52%;
+      left: 784px;
+      width: 800px;
+      height: 400px;
+      z-index: 3;
+    }
+    .clouds:nth-child(5) {
+      top: 53%;
+      left: 484px;
+      width: 800px;
+      height: 400px;
+    }
+    .clouds2:nth-child(6) {
+      top: 52%;
+      left: 200px;
+      width: 800px;
+      height: 400px;
+      z-index: 3;
+    }
+    .clouds:nth-child(7) {
+      top: 53%;
+      left: 0px;
+      width: 800px;
+      height: 400px;
+    }
+
+    @include mQ(650px) {
+      .clouds:nth-child(3) {
+        top: 53% * 1.3;
+        left: 984px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+        display: none;
+      }
+      .clouds2:nth-child(4) {
+        top: 52% * 1.3;
+        left: 784px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 4;
+      }
+      .clouds:nth-child(5) {
+        top: 55% * 1.3;
+        left: 484px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+        display: none;
+
+      }
+      .clouds2:nth-child(6) {
+        top: 54% * 1.3;
+        left: 200px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+      }
+      .clouds:nth-child(7) {
+        top: 56% * 1.3;
+        left: 0px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+      }
+    }
+    @include mQ(450px) {
+      .clouds:nth-child(3) {
+        top: 53% * 1.25;
+        left: 984px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+      }
+      .clouds2:nth-child(4) {
+        top: 52% * 1.25;
+        left: 784px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 4;
+      }
+      .clouds:nth-child(5) {
+        top: 55% * 1.25;
+        left: 484px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+      }
+      .clouds2:nth-child(6) {
+        top: 54% * 1.25;
+        left: 200px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+      }
+      .clouds:nth-child(7) {
+        top: 56% * 1.25;
+        left: 0px;
+        width: 800px * $clouds;
+        height: 400px * $clouds;
+        z-index: 3;
+      }
+    }
+    
+    @include mQ(750px) {.face {height: 100% !important;}};
+
   @include moon;
 
    @include bubbles;
@@ -346,25 +649,26 @@ html {
     }
 
     .clouds {
-      @include clouds('../images/lemon-cloud.png', 380px * 4, 142px * 4, -303px, 100px);
-      @include floating(15s, 0s, 5%);
+      @include clouds('../images/lemon-cloud.png', 380px * 4, 142px * 4, -303px, 7%);
+      @include wind(15s, 0s, 5%);
       z-index: 0;
     }
     .clouds:nth-child(2) {
-      @include clouds('../images/lemon-cloud.png', 380px, 142px, 103px, 606px);
+      @include clouds('../images/lemon-cloud.png', 380px, 142px, 10%, 42%);
       @include floating(10s, 1s, 5%);
     }
     .clouds:nth-child(3) {
-      @include clouds('../images/lemon-cloud.png', 380px * .9, 142px * .9, 153px, 1000px);
+      @include clouds('../images/lemon-cloud.png', 380px * .9, 142px * .9, 17%, 70%);
       @include floating(10s, 0s, 6%);
     }
 
     .clouds:nth-child(4) {
-      @include clouds('../images/lemon-cloud.png', 380px * .5, 142px * .5, 103px, 50px);
+      @include clouds('../images/lemon-cloud.png', 380px * .5, 142px * .5, 10%, 4%);
       @include floating(5s, 0s, 10%);
     }
-
   }
+
+  
   
   #lemongrab {
     #cover {
@@ -372,12 +676,38 @@ html {
     }
   }
 
-@include mQ(450px)  {
+@include mQ(650px)  {
   #lemongrab {
+    background:  linear-gradient(180.49deg, #3846AD 50.12%, #885987 62.59%, #F3BA85 79.38%, #FFFEA1 92.53%);
     #cover {
-      height: 50%;
+      height: 60%;
     }
+    
   }
+
+  .clouds:nth-child(2) {
+    top: 10% * 5 !important;
+    width: 380px * .7 !important ;
+    height: 142px * .7 !important ;
+  }
+  .clouds:nth-child(3) {
+    top: 10% * 5 !important;
+    left: 10% !important;
+    width: 380px * .6 !important ;
+    height: 142px * .6 !important ;
+  }
+  .clouds:nth-child(4) {
+    top: 10% * 5 !important;
+    width: 380px * .4 !important ;
+    height: 142px * .4 !important ;
+  }
+
+  .clouds:nth-child(5) {
+    top: 10% * 4 !important;
+    width: 380px * 1 !important ;
+    height: 142px * 1 !important ;  }
+
+  
 }
 
   .container:nth-child(7){
@@ -431,14 +761,35 @@ html {
   @include moon;
 
   .cloud1 {
-    @include clouds('../images/ice-cloud.png', 380px * .9, 142px * .9, 453px, 100px);
+    @include clouds('../images/ice-cloud.png', 380px * .9, 142px * .9, 58%, 9%);
     @include wind(10s, 0s, 10%);
     z-index: 0;
   }
   .cloud2 {
-    @include clouds('../images/ice-cloud.png', 380px * 1.2, 142px * 1.2, 100px, 1048px);
+    @include clouds('../images/ice-cloud.png', 380px * 1.2, 142px * 1.2, 10%, 72%);
     @include wind(10s, 0s, -10%);
   }
+  @include mQ(650px) {
+    .cloud1 {
+      top: 58%;
+      left: 10%;
+      height: 142px * .6;
+      width: 380px * .6;
+    }
+    .cloud2 {
+      top: 45%;
+      left: 72%;
+      height: 142px * .8;
+      width: 380px * .8;
+    }
+  }
+  @include mQ(750px) {.face {height: 100% !important;}};
+
+  @include mQ(450px) {
+    #cover {
+      height: 35%;
+    }
+}
 }
 
 
@@ -465,7 +816,7 @@ html {
   .one {
     background: #1A1A1A;
     text-align: center;
-    color: white;
+    color: rgb(227, 227, 227);
     display: flex;
     flex-direction: column;
     align-items: center;
