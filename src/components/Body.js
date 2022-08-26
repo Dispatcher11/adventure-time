@@ -31,7 +31,6 @@ const Body = () => {
 
             <div id="finn" className="container">
                 <div id="cover"></div>
-                <div id="clouds-container">
                     <div className="clouds"></div>
                     <div className="clouds"></div>
                     <div className="clouds"></div>
@@ -40,7 +39,7 @@ const Body = () => {
                     <div className="clouds-medium1 clouds-medium"></div>
                     <div className="clouds-medium2 clouds-medium"></div>
                     <div className="clouds-medium3 clouds-medium"></div>
-                    </div>
+                    
                 <div className={myElementIsVisible1 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible1 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[1].name} </h1>

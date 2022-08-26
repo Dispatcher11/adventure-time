@@ -166,7 +166,26 @@ html {
     }
     .face {
       height: 70% !important;
+      
       @include colorful(1.5s, 0s);
+    }
+    @include mQ(1200px) {
+      .face {
+        height: 40% !important;
+        width: 83% !important;
+      }
+    }
+    @include mQ(781px) {
+      .face {
+        height: 28% !important;
+        width: 61% !important;
+      }
+    }
+    @include mQ(751px) {
+      .face {
+        height: 190px !important;
+        width: 390px !important;
+      }
     }
 
   .cloud1 {
@@ -415,13 +434,13 @@ html {
            
            @include mQ(650px) {
             .clouds:nth-child(2) {
-              top: 240px * $clouds-top-two;
-              left: 27%;
-              width: 400px * $clouds;
-              height: 100px * $clouds;
+              top: 540px;
+              left: 15%;
+              width: 300px * $clouds;
+              height: 66px * $clouds;
              }
              .clouds:nth-child(3) {
-              top: 230px * $clouds-top-two;
+              top: 600px;
               left: 82%;
               width: 320px * $clouds;
               height: 80px * $clouds;
@@ -514,6 +533,9 @@ html {
       @include wind(15s, 0s, 5%);
     }
     @include mQ(400px){
+      #bubblegum{
+        
+      }
       h1 {
         line-height: 30px !important;
       }
@@ -559,7 +581,6 @@ html {
         width: 800px * $clouds;
         height: 400px * $clouds;
         z-index: 3;
-        display: none;
       }
       .clouds2:nth-child(4) {
         top: 52% * 1.3;
@@ -683,7 +704,6 @@ html {
       height: 60%;
     }
     
-  }
 
   .clouds:nth-child(2) {
     top: 10% * 5 !important;
@@ -709,7 +729,7 @@ html {
 
   
 }
-
+}
   .container:nth-child(7){
     @include characters('../images/flames.png', linear-gradient(178.19deg, #6D000A 3.43%, #333333 98.5%), "../images/flame-princess2.png", 300px, 423px, row-reverse);
     @include face(#ff4208, '../images/flame-face.jpg', 100%);
