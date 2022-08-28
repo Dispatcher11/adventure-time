@@ -348,9 +348,16 @@ html {
    }
 
 
-    .active {
-      @include translatex(1.5s, .3s);
-      }    
+
+        .active {
+          @include translatex(1.5s, .3s);
+          }    
+
+      @include mQ(650px, 0px) {
+        .active {
+          @include unopacityMobile();
+          }    
+      }
 .opacity {
       @include opacity(1s, 1.5s);
     }
@@ -465,6 +472,11 @@ html {
     .active {
       @include translateminus(1.5s, .3s);
       }    
+      @include mQ(650px, 0px) {
+        .active {
+          @include unopacityMobile();
+          }    
+      }
 .opacity {
       @include opacity(1s, 1.5s)
     }
@@ -480,6 +492,11 @@ html {
     @include face(#63BDA4, '../images/beemo-face.jpg', 90%);
     .active {
       @include translatey(1.5s, .3s);
+    }
+    @include mQ(650px, 0px) {
+      .active {
+        @include unopacityMobile();
+        }    
     }
     .opacity {
       @include opacity(1s, 1.5s)
@@ -505,7 +522,7 @@ html {
     position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1;
+    z-index: -1 !important;
     bottom: 0px;
     @include rotate(5000s, 0s)
      }
@@ -521,6 +538,11 @@ html {
     .active {
       @include stretch(1.5s, .3s);
       }    
+      @include mQ(650px, 0px) {
+        .active {
+          @include unopacityMobile();
+          }    
+      }
 .opacity {
       @include opacity(1s, 1.5s);
     }
@@ -665,6 +687,11 @@ html {
     .active {
       @include translatex(1.5s, .3s);
       }    
+      @include mQ(650px, 0px) {
+        .active {
+          @include unopacityMobile();
+          }    
+      }
 .opacity {
       @include opacity(1s, 1.5s)
     }
@@ -736,6 +763,11 @@ html {
     .active {
       @include scale(1.5s, .3s);
     }
+    @include mQ(650px, 0px) {
+      .active {
+        @include unopacityMobile();
+        }    
+    }
     #cover:first-child {
       height: 50%;
       bottom: -30px;
@@ -768,6 +800,11 @@ html {
     @include face(#fff, '../images/ice-king-face.jpg', 100%);
     .active {
       @include translateminus(1.5s, .3s);
+    }
+    @include mQ(650px, 0px) {
+      .active {
+        @include unopacityMobile();
+        }    
     }
     .opacity {
       @include opacity(1s, 1.5s)
@@ -820,6 +857,11 @@ html {
   .active {
     @include unopacity(1.5s, .3s);
   }
+  @include mQ(650px, 0px) {
+    .active {
+      @include unopacityMobile();
+      }    
+  }
   .img-container {
     @include floating(6s, 0s, 12px);
     }    
@@ -834,14 +876,14 @@ html {
     background-color: black;
 
   .one {
-    background: #1A1A1A;
+    background: #000;
     text-align: center;
     color: rgb(227, 227, 227);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px 0;     
+    padding: 20px 0;     
     p {
       width: 60%;
       font-family: 'Rubik', sans-serif;
@@ -950,13 +992,14 @@ html {
 
     .footer {  
     .one {      
+      padding: 20px 0px 0px 0px;
       p {
         width: 78%;
         font-size: 16px;
         font-weight: 500;
         line-height: 21px;
         letter-spacing: 0.045em;
-        text-align: left;
+        text-align: center;
         
       }
   

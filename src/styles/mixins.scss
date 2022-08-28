@@ -161,37 +161,48 @@
 @mixin unopacity($time, $delay){
     animation: unopacity $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes unopacity {
         from {
         }
         to {
             opacity: 0;
-            z-index: 0;
         }
     }
 }
-
+@mixin unopacityMobile(){
+    animation: unopacity .5s .3s ease-in-out both;
+    transition: .3s;
+    z-index: 2;
+    @keyframes unopacity {
+        from {
+        }
+        to {
+            opacity: 0;
+        }
+    }
+}
 @mixin translatex($time, $delay){
     animation: translatex $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes translatex {
         from {
         }
         to {
             transform:translateX(100%);
-            z-index: 0;
         }
     }
 }
 @mixin translatey($time, $delay){
     animation: translatey $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes translatey {
         from {
         }
         to {
             transform:translateY(-100%);
-            z-index: 0;
         }
     }
 }
@@ -199,12 +210,12 @@
 @mixin translateminus($time, $delay){
     animation: translateminus $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes translateminus {
         from {
         }
         to {
             transform:translateX(-100%);
-            z-index: 0;
         }
     }
 }
@@ -212,13 +223,13 @@
 @mixin scale($time, $delay){
     animation: scale $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes scale {
         from {
         }
         to {
             width: 500%;
             opacity: 0;
-            z-index: 0;
         }
     }
 }
@@ -226,12 +237,12 @@
 @mixin width($time, $delay){
     animation: width $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes width {
         from {
         }
         to {
             transform: scaleX(0);
-            z-index: 0;
         }
     }
 }
@@ -239,18 +250,19 @@
 @mixin height($time, $delay){
     animation: height $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes height {
         0% {
         }
         100% {
             transform: scaleY(0);
-            z-index: 0;
         }
     }
 }
 @mixin rotate($time, $delay){
     animation: rotate $time $delay linear both;
     transition: .3s;
+    z-index: 5;
     @keyframes rotate {
         0% {
             transform: rotate(0deg) scale(2);
@@ -265,6 +277,7 @@
 @mixin stretch($time, $delay){
     animation: stretch $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes stretch {
         0% {
         }
@@ -279,6 +292,7 @@
 @mixin shake($time, $delay){
     animation: shake $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
+    z-index: 5;
     @keyframes shake {
         0% {
         }

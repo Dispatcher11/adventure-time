@@ -6,15 +6,15 @@ const Footer = () => {
     return ( 
         <footer className="footer" id="about">
             <div className="one">
-           <p>Hi, I’m Belal Elgebaly, I designed and developed this Adventure Time animated page, I used to watch this show as a kid, it was one of my favorites, so one day I thought to myself why shouldn’t I make something for it? so I gave it a shot!</p>
-
-           <form className="contact">
+           <p>Hi, I’m Belal Elgebaly, I designed and developed this Adventure Time page, I used to watch this show as a kid, it was one of my favorites, so one day I thought to myself why shouldn’t I make something for it? and I gave it a shot!</p>
+{/* 
+           <form className="contact" target="_blank" action="https://formsubmit.co/belalelgebaly20000@gmail.com" method="POST">
             <p>Leave a comment?</p>
             <input type="text" id="name" name="name" placeholder="Name" />
             <textarea placeholder="Comment" name="comment" id="comment" cols="30" rows="3"></textarea>
             {/* <textarea placeholder="Comment" name="comment" id="comment" cols="30" rows="5"></textarea> */}
-            <button>SUBMIT</button>
-           </form>
+            {/* <button>SUBMIT</button>
+           </form> */}
             </div>
 
             <div className="two">
