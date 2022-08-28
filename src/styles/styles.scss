@@ -540,7 +540,7 @@ html {
       }    
       @include mQ(650px, 0px) {
         .active {
-          @include unopacityMobile();
+          @include unopacityMobile2();
           }    
       }
 .opacity {

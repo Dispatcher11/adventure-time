@@ -182,6 +182,18 @@
         }
     }
 }
+@mixin unopacityMobile2(){
+    animation: unopacity .5s .3s ease-in-out both;
+    transition: .3s;
+    z-index: 5;
+    @keyframes unopacity {
+        from {
+        }
+        to {
+            opacity: 0;
+        }
+    }
+}
 @mixin translatex($time, $delay){
     animation: translatex $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
