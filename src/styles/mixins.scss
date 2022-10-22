@@ -206,6 +206,7 @@
         }
     }
 }
+
 @mixin translatey($time, $delay){
     animation: translatey $time $delay cubic-bezier(0.77, 0, 0.175, 1) both;
     transition: .3s;
@@ -751,6 +752,7 @@
         height: 100px;
         background-color: transparent;
         position: absolute;
+        z-index: 1;
         top: 10%;
         left: 15%;
         border-radius: 50%;

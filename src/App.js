@@ -9,6 +9,7 @@ function App() {
       <Navbar />
       <Body />
       <Footer />
+      {/* <Snow /> */}
     </div>
   );
 }

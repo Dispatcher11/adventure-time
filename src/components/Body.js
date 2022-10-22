@@ -136,16 +136,21 @@ const Body = () => {
             </div>
 
             <div id="ice-king" className="container">
-                <div id="cover"></div>
-                <div id="moon"></div>
-                <div className="cloud1"></div>
-                <div className="cloud2"></div>
+
+                {/* <div id="cover"></div> */}
+                {/* <div id="moon"></div> */}
+                {/* <div className="cloud1"></div>
+                <div className="cloud2"></div> */}
+                
                                 <div className={myElementIsVisible7 ? 'face-background active' : 'face-background'}><div className="face"></div></div>
                 <div className={myElementIsVisible7 ? 'text-container opacity' : 'text-container'}>
                     <h1>{characters[7].name}</h1>
                     <p ref={ice}>{characters[7].text}</p>
                 </div>
                 <div className={myElementIsVisible7 ? 'opacityimg' : ''}><div className="img-container"></div></div>
+                <div className="snow-con">
+      {Array.from({ length: 250 }, (_, i) => <div class="snow"></div>)}
+        </div>
             </div>
 
             <div id="marceline" className="container"  ref={marceline}>

@@ -10,6 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@500&display=swap');
 
 
+
 html {
   scroll-behavior: smooth;
 }
@@ -696,6 +697,8 @@ html {
       @include opacity(1s, 1.5s)
     }
 
+    height: 0px !important;
+
     .clouds {
       @include clouds('../images/lemon-cloud.png', 380px * 4, 142px * 4, -303px, 7%);
       @include wind(15s, 0s, 5%);
@@ -796,7 +799,7 @@ html {
   }
   
   .container:nth-child(8){
-    @include characters('../images/ice-kingdom.png', linear-gradient(107.45deg, #1E1EA6 4.38%, #000055 87.9%), "../images/ice-king.png", 300px, 423px, row);
+    @include characters('../images/ice-kingdom.png', linear-gradient(107.45deg, #161680 4.38%, #000033 87.9%), "../images/ice-king.png", 300px, 423px, row);
     @include face(#fff, '../images/ice-king-face.jpg', 100%);
     .active {
       @include translateminus(1.5s, .3s);
@@ -820,7 +823,7 @@ html {
   .cloud1 {
     @include clouds('../images/ice-cloud.png', 380px * .9, 142px * .9, 58%, 9%);
     @include wind(10s, 0s, 10%);
-    z-index: 0;
+    
   }
   .cloud2 {
     @include clouds('../images/ice-cloud.png', 380px * 1.2, 142px * 1.2, 10%, 72%);
@@ -847,6 +850,58 @@ html {
       height: 35%;
     }
 }
+.snow-con {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(107.45deg, #1e1ea6a3 4.38%rgba(0, 0, 85, 0.735)55 87.9%);
+  overflow: hidden;
+  filter: drop-shadow(0 0 10px white);
+  position: absolute;
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+.snow {
+  $total: 250;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+
+  @for $i from 1 through $total {
+    $random-x: random(1000000) * 0.0001vw;
+    $random-offset: random_range(-100000, 100000) * 0.0001vw;
+    $random-x-end: $random-x + $random-offset;
+    $random-x-end-yoyo: $random-x + ($random-offset / 2);
+    $random-yoyo-time: random_range(30000, 80000) / 100000;
+    $random-yoyo-y: $random-yoyo-time * 100vh;
+    $random-scale: random(10000) * 0.0001;
+    $fall-duration: random_range(10, 30) * 1s;
+    $fall-delay: random(30) * -1s;
+
+    &:nth-child(#{$i}) {
+      opacity: random(10000) * 0.0001;
+      transform: translate($random-x, -10px) scale($random-scale);
+      animation: fall-#{$i} $fall-duration $fall-delay linear infinite;
+    }
+
+    @keyframes fall-#{$i} {
+      #{percentage($random-yoyo-time)} {
+        transform: translate($random-x-end, $random-yoyo-y) scale($random-scale);
+      }
+
+      to {
+        transform: translate($random-x-end-yoyo, 110vh) scale($random-scale);
+      }
+    }
+  }
+}
+
 }
 
 
@@ -1063,3 +1118,6 @@ html {
   
   
   }
+// .reverse {
+//     @include translatexr(1.5s, .3s);
+// }
