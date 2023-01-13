@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/adventure-time/static/css/main.8b27610a.css",
+    "main.css": "/adventure-time/static/css/main.9d20c7f7.css",
     "main.js": "/adventure-time/static/js/main.81003f54.js",
     "static/media/spaceland.png": "/adventure-time/static/media/spaceland.20dffb439d39ab020ef0.png",
     "static/media/space.png": "/adventure-time/static/media/space.b0b53f754b53f9a25b82.png",
@@ -27,6 +27,7 @@
     "static/media/finn.png": "/adventure-time/static/media/finn.3eeb4af84b21b7c1c8a9.png",
     "static/media/ice-king-face.jpg": "/adventure-time/static/media/ice-king-face.839d354980a134433872.jpg",
     "static/media/queenbubblegum-face.png": "/adventure-time/static/media/queenbubblegum-face.6ac494382211099ba850.png",
+    "static/media/jake-face.jpg": "/adventure-time/static/media/jake-face.56c63e316f2d88c90765.jpg",
     "static/media/jake-cloud.png": "/adventure-time/static/media/jake-cloud.09c614458f404917cd4e.png",
     "static/media/bigasscloud.png": "/adventure-time/static/media/bigasscloud.37a94d26f486f9a5c026.png",
     "static/media/ice-cloud.png": "/adventure-time/static/media/ice-cloud.c46649688c57e1e3693c.png",
@@ -38,13 +39,12 @@
     "static/media/cn.png": "/adventure-time/static/media/cn.482dea82638b88690ba3.png",
     "static/media/secondsmallasscloud.png": "/adventure-time/static/media/secondsmallasscloud.29950bd73ad43c79eed6.png",
     "static/media/marceline-face.jpg": "/adventure-time/static/media/marceline-face.21eb3c1d78b2e64ee026.jpg",
-    "static/media/jake-face.jpg": "/adventure-time/static/media/jake-face.0d492ca12c3b86edc4d2.jpg",
     "index.html": "/adventure-time/index.html",
-    "main.8b27610a.css.map": "/adventure-time/static/css/main.8b27610a.css.map",
+    "main.9d20c7f7.css.map": "/adventure-time/static/css/main.9d20c7f7.css.map",
     "main.81003f54.js.map": "/adventure-time/static/js/main.81003f54.js.map"
   },
   "entrypoints": [
-    "static/css/main.8b27610a.css",
+    "static/css/main.9d20c7f7.css",
     "static/js/main.81003f54.js"
   ]
 }
