@@ -537,7 +537,7 @@ html {
       z-index: 4;
     }
     .active {
-      @include stretch(1.5s, .3s);
+      @include stretch(1s, .3s);
       }    
       @include mQ(650px, 0px) {
         .active {
@@ -772,19 +772,19 @@ html {
         }    
     }
     #cover:first-child {
-      height: 50%;
+      height: 40%;
       bottom: -30px;
       width: 120%;
       @include flames(.7s, 0s, 20px);
     }
     #cover:nth-child(2) {
-      height: 45%;
+      height: 35%;
       bottom: -20px;
       width: 140%;
       @include flames(.8s, .3s, -430px);
     }
     #cover:nth-child(3) {
-      height: 35%;
+      height: 25%;
       width: 150%;
       bottom: -30px;
       @include flames(.6s, 1s, 20px);
